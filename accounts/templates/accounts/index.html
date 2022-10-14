@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>index.html</h1>
+  <h1>index.html</h1>
+  {% for us in user %}
+    {{ us.username }}
+  {% endfor %}
+  <a href="{% url 'accounts:login' %}" class='btn btn-primary'>login</a>
 {% endblock %}
