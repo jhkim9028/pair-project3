@@ -1,5 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>index</h1>
+  <h1>index</h1>
+  {% for review in reviews%}
+    <p>
+      <a href="{% url 'reviews:detail' review.pk %}" class="text-decoration-none text-black">{{review.title}}</a>
+    </p>
+  {% endfor %}
 {% endblock %}
