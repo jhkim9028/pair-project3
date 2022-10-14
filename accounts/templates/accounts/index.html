@@ -3,7 +3,11 @@
 {% block content %}
   <h1>index.html</h1>
   {% for us in user %}
+    <a href="{% url 'accounts:detail' us.pk %}">
+      {{ us.pk }}
+    </a>
     {{ us.username }}
+    <br>
   {% endfor %}
   <a href="{% url 'accounts:login' %}" class='btn btn-primary'>login</a>
 {% endblock %}
