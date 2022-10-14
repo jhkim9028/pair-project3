@@ -1,14 +1,26 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>{{ user.username }}</h1>
-name :
-{{ user.username }}
-first name:
-{{ user.first_name}}
-last name:
-{{ user.last_name }}
-email :
-{{ user.email }}
-<a href="{% url 'accounts:update' %}">test</a>
+  <h1>{{ user.username }}</h1>
+  <hr>
+  <p>name :
+    {{ user.username }}
+  </p>
+  <hr>
+  <p>
+    first name:
+    {{ user.first_name}}
+  </p>
+  <hr>
+  <p>
+    last name:
+    {{ user.last_name }}
+  </p>
+  <hr>
+  <p>
+    email :
+    {{ user.email }}
+  </p>
+  <hr>
+  <a href="{% url 'accounts:update' %}" class="btn btn-primary">update</a>
 {% endblock content %}

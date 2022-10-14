@@ -1,12 +1,26 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>index.html</h1>
-  {% for us in user %}
-    <a href="{% url 'accounts:detail' us.pk %}">
-      {{ us.pk }}
-    </a>
-    {{ us.username }}
-    <br>
-  {% endfor %}
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">username</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for us in user %}
+        <tr>
+          <th scope="row">
+            <a href="{% url 'accounts:detail' us.pk %}" class="text-decoration-none text-black">
+              {{ us.pk }}
+            </a>
+          </th>
+          <td>{{ us.username }}</td>
+
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
 {% endblock %}
