@@ -9,10 +9,4 @@
     {{ us.username }}
     <br>
   {% endfor %}
-  <a href="{% url 'accounts:login' %}" class='btn btn-primary'>login</a>
-  {% if request.user.is_authenticated %}
-    <h1>hello,
-      {{ request.user }}</h1>
-    <a href="{% url 'accounts:logout' %}" class='btn btn-primary'>logout</a>
-    {%endif%}
-  {% endblock %}
+{% endblock %}
